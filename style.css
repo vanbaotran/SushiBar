@@ -1,11 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+*{box-sizing: border-box;}
+body{
+    background-image:url(https://i.pinimg.com/736x/6e/32/d6/6e32d65bb0a99dd564aa3f7f67c5b574.jpg);
+    bbackground-size: 100%;
+    font-family: 'Dela Gothic One', cursive;
+    margin:0;
+}
+
 div {
     width: 400px;
-    margin: 50px auto;
-    background-color: black;
-  }
-  
-  h1 {
+    margin: 5px auto;
+    }
+.name {
+    padding: 20px;
+    display: flex;
+}  
+h1 {
+    background-image: url(images/cartoon-wood-board_26659-28-removebg-preview.png);
+    background-size: 100%;
+    font-size: 28px;
+    padding-top:20px;
+    padding-bottom:10px;
     text-align: center;
-    color: white;
+    color:white;
+    margin-bottom: 0;
   }
-  
+section{
+    position: relative;
+    width: 96vw;
+    height: 75vh;
+    display: flex;
+    margin-top:0;
+    margin-right: 30px;
+    margin-left:30px;
+    margin-bottom:30px;
+    background-image: url(http://backgroundlabs.com/wp-content/uploads/2013/04/light-wood-seamless-pattern.jpg);
+}
+.topLine{
+    margin:0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:96vw;
+    height: 10vh;
+    color:white
+}
+.topLine .dialogue{
+    margin-left: 20px;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 350px;
+    background-image: url(images/dialog-box.png);
+    background-size:100%;
+    padding:25px;
+    font-family: 'Nunito', sans-serif;
+    color:black;
+}
+.topLine .register{
+    margin-left: auto;
+    width:50px;
+    margin-right: 250px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.topLine .timer{
+    margin-left: 200px;
+    margin-right: auto;
+    width: 100px;
+}
+.recipes{
+    display: flex;
+    list-style: none;
+    padding:0;
+}
+.recipes li{
+    padding:40px;
+    margin:2px;
+    background-size:120%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+.recipeMaki{
+    background-image: url(images/recipeMaki.png);
+}
+.recipeKappa{
+    background-image: url(images/recipeKappa.png);
+}
+.recipeSashimi{
+    background-image: url(images/recipeSashimi.png);
+}
+.timer{
+    text-align: center;
+    padding: 10px;
+
+}
+.timer img{
+    height: 3vh;
+    
+}
+ul{
+    list-style: none;
+}
+li{
+    margin: 30px;
+}
+.leftLine{
+    background-image: url(images/rightLine.png);
+    margin-left:0;
+    margin-top: 0;
+    margin-bottom:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width:10vw;
+}
+
+.middleSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:30px;
+    padding:0;
+    justify-content: space-between;
+}
+img {
+    height: 20vh;
+    margin-bottom:auto;
+    padding:0;
+    margin: 0;
+}
+button{
+    margin:30px;
+    font-size: 32px;
+    font-weight: bold;
+    background-color:#2A2A05;
+    color:beige;
+    padding:10px 30px;
+    font-family: 'Dela Gothic One', cursive;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px #2A2A05;
+
+}
+.prepTable {
+    background-image: url(images/table.jpeg);
+    background-size: 100%;
+    box-shadow: 10px 5px 5px black;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap:wrap;
+    padding:0;
+    width:24vw;
+    height: 50wh;
+}
+.prepTable li{
+    width: 9vw;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:40px;
+    padding-bottom:40px;
+    bbackground-color:#EED6B4;
+    border-radius: 10px;
+    height: 10vh;
+}
+footer{
+    font-family: Arial, Helvetica, sans-serif;
+    color:gray;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.pickUpPoint{
+    display: flex;
+    background-color:#737373;
+    height: 20vh;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width:10vw ;
+    box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+.line{
+    background-color:#737373;
+    width:10vw ;
+    height: 1vh;
+    border-radius: 10px;
+}
+.lineOne{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.lineTwo{
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+.arrow-left{
+  margin:auto;
+  width: 0; 
+  height: 0; 
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-right:30px solid black;
+  opacity: 0.7;
+  transition:0.3s;
+}
+.arrow-left:hover{
+    opacity: 1;
+}
+.orders{
+    padding: 0;
+    margin:0px 0px 5px 0px;
+}
+.orders li{
+    width: 8vw;
+    margin-left: 0px;
+    height: 15vh;
+    border-radius: 5px;
+    margin-bottom:5px;
+    margin-top: 10px;
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+}
+.rightLine{
+    background-image:url(images/rightLine.png);
+    margin-top:0;
+    margin-bottom: 0;;
+    margin-right: 0;
+    margin-bottom:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width:10vw;
+    align-content: space-between;
+}
+.rightLine ul{
+    padding: 0;
+    margin-bottom: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.rightLine li{
+    width: 8vw;
+    margin-right: 10px;
+    height: 10vh;
+    margin-left:10px;
+    opacity: 0.8;
+    transition-property: opacity;
+    background-color:#865E3B;
+    border-radius: 5px;
+    margin-bottom:5px;
+    margin-top: 10px;
+}
+.rightLine li:hover{
+    opacity: 1;
+}
+.ing .dish{
+    background-image:url(images/dish.png);
+    background-size: 90%;
+    background-repeat: no-repeat;
+}
+.ing .salmon{
+    background-image:url(images/ingSalmon.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+}
+.ing .rice{
+    background-image:url(images/ingRice.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+}
+.ing .seaweed{
+    background-image:url(images/ingSeaweed.png);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ing .cucumber{
+    background-image:url(images/ingCucumber.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ing .trashCan{
+    background-image:url(images/trashCan.png);
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+canvas{
+    position: absolute;
+    left:167px;
+    top:167px;
+    pointer-events: none;
+}

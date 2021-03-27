@@ -4,13 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-
+    <title>🍣 Neko Sushi</title>
+    <!-- <canvas width=1200 height=1000></canvas> -->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div>
-      <h1>My Web App</h1>
+  <body> 
+    <div id='name'>
+      <h1>Neko Sushi</h1>
     </div>
+    <nav class="topLine">
+        <div class="dialogue">Welcome to Neko Sushi! We have the best sushi in town</div>
+        <ul class="recipes">
+            <li class="recipeMaki"></li>
+            <li class="recipeKappa"></li>
+            <li class="recipeSashimi"></li>
+        </ul>
+        <div class="timer">
+          <img src="images/clock.png">Time</div>
+        <div class="register"><img src="images/register.png"</div>
+    </nav>  
+    <section>
+        <div class="leftLine">
+            <ul class="orders">
+                <li class="orderMaki"><img src="images/order_maki-removebg-preview.png"></li>
+                <li class="orderKappa"><img src="images/orderKappa.png"></li>
+                <li class="orderSashimi"><img src="images/order_sashimi-removebg-preview.png"></li>
+            </ul>
+            <div class="line lineOne"></div>
+            <div class="dst pickUpPoint">
+              <div class="arrow-left"></div>
+              <div class="arrow-left"></div>
+              <div class="arrow-left"></div>
+            </div>
+            <div class="line lineTwo"></div>
+        </div>
+        <div class="middleSection"> 
+            <ul class="dst prepTable">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <!-- <img src="images/chef.png"> -->
+            <button>Start Game</button>
+        </div>
+        <div class="rightLine">
+            <ul class="ing">
+                <li class="dst dish"></li>
+                <li class="dst salmon"></li>
+                <li class="dst rice"></li>
+                <li class="dst seaweed"></li>
+                <li class="dst cucumber"></li>
+                <li class="dst trashCan"></li>
+        </div>
+    </section>
+    <canvas width="1100" height="700"></canvas>
+    <footer>
+      Created by vanbaotran
+    </footer> 
+    <script src="js/main.js"></script>
   </body>
 </html>
