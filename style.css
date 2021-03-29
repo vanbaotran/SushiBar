@@ -152,9 +152,9 @@ button{
     flex-wrap:wrap;
     padding:0;
     width:24vw;
-    height: 50wh;
+    height:100wh;
 }
-.prepTable li{
+.prepTable img{
     width: 9vw;
     margin-top: 2px;
     margin-bottom: 2px;
@@ -164,9 +164,7 @@ button{
     padding-right: 10px;
     padding-top:40px;
     padding-bottom:40px;
-    bbackground-color:#EED6B4;
     border-radius: 10px;
-    height: 10vh;
 }
 footer{
     font-family: Arial, Helvetica, sans-serif;
@@ -216,17 +214,10 @@ footer{
     padding: 0;
     margin:0px 0px 5px 0px;
 }
-.orders li{
-    width: 8vw;
-    margin-left: 0px;
+.orders img{
     height: 15vh;
-    border-radius: 5px;
-    margin-bottom:5px;
-    margin-top: 10px;
-    background-size: 110%;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 0;
+    padding: 0 auto;
+    margin: 0 auto;
 }
 .rightLine{
     background-image:url(images/rightLine.png);
@@ -300,7 +291,8 @@ footer{
 }
 canvas{
     position: absolute;
-    left:167px;
-    top:167px;
+    left:0px;
+    top:0px;
     pointer-events: none;
+    border:1px red solid;
 }

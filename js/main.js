@@ -1,28 +1,19 @@
 const menu =['maki','kappamaki','sashimi'];
 const ingredients = ['seaweed','cucumber','rice','salmon','dish'];
-const orders=[];
+let onHand='';
+let prepTable=[];
+let orders=[];
+let delivered=[];
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 const W = ctx.canvas.width;
-console.log(W);
 const H = ctx.canvas.height;
 
 
+
 //display orders: pick 20 random orders, 3 at a time, when there are less than 3 orders, push 1
-let countOrders = 0;
-        for (i=0;i<3;i++){
-            let random = Math.floor(Math.random()*menu.length);
-            if (orders.length<3){
-                orders.push(menu[random]);
-                countOrders++;
-            }    
-        }
-        console.log(orders,countOrders);
+
 // when the order is served, remove that order from array Orders and add another one 
-
-
-
-
 
 
 //the class Chef (x,y,w,h), drawChef(), moveTo(position), pickIng(position), drop(position)
@@ -72,7 +63,6 @@ class Chef{
     }
     update(){
         this.x+=this.speedX;
-        console.log(this.x)
         this.y+=this.speedY;
     }
     draw(){
@@ -80,24 +70,25 @@ class Chef{
         ctx.drawImage(this.img,this.x,this.y,this.w,this.h); 
     }
     //these methods will help move around (avoid obstacles)
-    bottom(){
-        return this.y+this.h;
-    }
-    top(){
-        return this.y
-    }
-    left(){
-        return this.x;
-    }
-    right(){
-        return this.x+this.h;
-    }
+    // bottom(){
+    //     return this.y+this.h;
+    // }
+    // top(){
+    //     return this.y
+    // }
+    // left(){
+    //     return this.x;
+    // }
+    // right(){
+    //     return this.x+this.h;
+    // }
     //change into image of the Chef with the item
     pickItem(item){    
         switch(item){
             case 'dish'://changer de position en calculant distance
-                ctx.clearRect(this.x,this.y,this.w,this.y)
-                ctx.drawImage(this.pickDish,dishIng.getBoundingClientRect().x-this.w-120,dishIng.getBoundingClientRect().y-this.h-40,this.w,this.h)
+                this.update();
+                console.log('changing image')
+                ctx.drawImage(this.pickDish,this.x,this.y,this.w,this.h)
                 break;
             case 'salmon':
                 ctx.drawImage(this.pickSalmon,600,500,this.w,this.h)
@@ -109,9 +100,9 @@ class Chef{
                 this.pickSeaweed.draw();
                 break;
             case 'cucumber':
-                this.pickCucumber.draw();
+                this.pickCucumber.draw();team
                 break;
-            case 'makiDish':
+            case 'makiDish':tea
                 this.pickMakiDish.draw();
                 break;
             case 'kappaDish':
@@ -121,6 +112,11 @@ class Chef{
                 this.pickSashimiDish.draw();
                 break; 
         }
+    }
+    deliver(dish){
+        this.update()
+        this.draw(this.img,this.x,this.y,this.w,this.h);
+        delivered.push(dish);
     }
 }
 
@@ -133,51 +129,77 @@ const seaweedIng = document.querySelector('.ing .seaweed');
 const cucumberIng = document.querySelector('.ing .cucumber');
 const trashCanIng = document.querySelector('.ing .trashCan');
 
-// dishIng.onclick=function(){
-//     chef.moveTo(dishIng.getBoundingClientRect().x,dishIng.getBoundingClientRect().y);
-//     chef.pickItem('dish');
-// }
-
 const chef = new Chef ();
-//click on Start Game => button disappears and appears the Chef, Timer starts
-document.querySelector('button').onclick=function(){
-    document.querySelector('button').remove();
-}
 
-//move to destinations 
-function moveTo (event){
-    console.log('running');
-    // for (let i=0;i<500;i++){ 
-        //chef.update();
-        if (chef.x<900){
-            chef.speedX+=1;
-            chef.update()
-        } 
-    // }
-    // var max=500;
-    // let i=0;
-    // for (i; i<max;i++){
-    //     chef.update(); 
-    //     if (chef.x<500){ 
-    //         chef.speedX=1;
-    //     } else {
-    //         chef.speedX=0;
-    //     }
-    // }       
-}
+//click on Start Game => button disappears and appears the Chef, Timer starts
+
+//move to destinations
+// document.addEventListener('keydown', (e) => {
+//     switch (e.keyCode) {
+//       case 38: // up arrow
+//         chef.speedY -= 3;
+//         break;
+//       case 40: // down arrow
+//         chef.speedY += 3;
+//         break;
+//       case 37: // left arrow
+//         chef.speedX -= 3;
+//         break;
+//       case 39: // right arrow
+//         chef.speedX += 3;
+//         break;
+//       case 32://space to pick/drop Items
+//         console.log('space');
+//         console.log(dishIng.getBoundingClientRect().x,dishIng.getBoundingClientRect().y);
+//         chef.pickItem('dish');
+//         break;
+//     }
+//   });
+//   document.addEventListener('keyup', (e) => {
+//     chef.speedX = 0;
+//     chef.speedY = 0;
+//   });
+
+function moveRightDown (event){
+    console.log('running',event.target.getBoundingClientRect().x,event.target.getBoundingClientRect().y);
+    // setInterval(() => {
+        // chef.update();
+        // if(chef.x<event.target.getBoundingClientRect().x-150 && chef.y<event.target.getBoundingClientRect().y-80){
+        //     chef.speedX=3;
+        //     chef.speedY=3;
+        // } 
+        // console.log(chef.x<event.target.getBoundingClientRect().x-150 && chef.y<event.target.getBoundingClientRect().y-80)
+    // }, 100);
+    while(chef.x>600){
+        chef.speedX=1;
+        console.log(chef.x);
+        if (chef.x>900){
+            chef.speedX=0;
+            break;
+        }
+    }
+} 
 
 //apply on everywhere clicked
 var dsts = document.querySelectorAll('.dst');
-dsts.forEach(dst => dst.addEventListener('click',moveTo));
+dsts.forEach(dst => dst.addEventListener('click',moveRightDown));
 
-function animLoop(){
-    draw()
-    requestAnimationFrame(animLoop)
-}
-animLoop();
 function draw(){
     //function executee toutes les 16 miliseconds
-    ctx.clearRect(0,0,1100,700);
+    ctx.clearRect(0,0,1750,900);
     chef.update();
     chef.draw();
+    addOrders();
+    checkOrders();
+    addIngredient();
+
 }
+document.querySelector('button').onclick=function(){
+    document.querySelector('button').remove();
+    function animLoop(){
+        draw()
+        requestAnimationFrame(animLoop)
+    }
+    animLoop();
+}
+
