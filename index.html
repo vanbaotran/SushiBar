@@ -21,7 +21,17 @@
         </ul>
         <div class="timer">
           <img src="images/clock.png">Time</div>
-        <div class="register"><img src="images/register.png"</div>
+        <div class="register" style="height:80px; width:80px; clear:both;"></div>
+        <table class="score">
+          <tr>
+            <td>Target</td>
+            <td>Turnover</td>
+          </tr>
+          <tr>
+            <td>120</td>
+            <td class='turnOver'>0</td>
+        </tr>
+        </table>
     </nav>  
     <section>
         <div class="leftLine">
@@ -48,13 +58,15 @@
                 <li class="dst rice"></li>
                 <li class="dst seaweed"></li>
                 <li class="dst cucumber"></li>
-                <li class="dst trashCan"></li>
+                <li class="trashCan"></li>
         </div>
     </section>
     <canvas width="1850" height="900"></canvas>
     <footer>
       Created by vanbaotran
     </footer> 
+    <script src="js/onHand.js"></script>
+    <script src="js/deliver.js"></script>
     <script src="js/orders.js"></script>
     <script src="js/prepTable.js"></script>
     <script src="js/main.js"></script>

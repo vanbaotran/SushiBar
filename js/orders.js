@@ -16,7 +16,6 @@ function addOrders(){
         }
         orders.push(menu[random]);
         document.querySelector('.orders').appendChild(ord);
-        console.log(orders);
     }
 
 }
