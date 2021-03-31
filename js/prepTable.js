@@ -2,6 +2,7 @@ let prepFood=[];
 let makiDish=['dish','seaweed','rice','salmon'];
 let kappaDish=['dish','seaweed','rice','cucumber'];
 let sashimiDish=['dish','salmon','rice']
+let preparedDish='';
 function addIngredient(){
     if (onHand.length>0){ //add ingredients to the prepTable
         prepFood.push(onHand);
@@ -29,6 +30,8 @@ function addIngredient(){
     }   
     
 }
+const kappaDishImg = document.createElement('img');
+kappaDishImg.src='images/kappamaki-dish.png'
 function clearTheTable(){
     onHand='';
     prepFood=[];
@@ -36,22 +39,30 @@ function clearTheTable(){
     allIng.forEach(ing=>ing.remove())
 }
 function rollIt(){
+    preparedDish='';
     if (makiDish.every(ing=>prepFood.includes(ing))===true){ //img.MakiDish
         clearTheTable();
         const makiDishImg = document.createElement('img');
         makiDishImg.src='images/maki-dish.png'
-        document.querySelector('.prepTable').appendChild(makiDishImg);
+        middleSection.appendChild(makiDishImg);     
+        preparedDish+='maki';
+        onHand+='maki';
     }
-    if (kappaDish.every(ing=>prepFood.includes(ing))===true){ //img.MakiDish
+    else if (kappaDish.every(ing=>prepFood.includes(ing))===true){ //img.KAPPA
         clearTheTable();
-        const kappaDishImg = document.createElement('img');
-        kappaDishImg.src='images/kappamaki-dish.png'
-        document.querySelector('.prepTable').appendChild(kappaDishImg);
-    }
-    if (sashimiDish.every(ing=>prepFood.includes(ing))===true){ //img.MakiDish
+        middleSection.appendChild(kappaDishImg);
+        preparedDish+='kappamaki';
+        onHand+='kappamaki'
+    } else if (sashimiDish.every(ing=>prepFood.includes(ing))===true){ //img.MakiDish
         clearTheTable();
         const sashimiDishImg = document.createElement('img');
         sashimiDishImg.src='images/sashimi-dish.png'
         document.querySelector('.prepTable').appendChild(sashimiDishImg);
+        preparedDish+='sashimi';
+        onHand+='sashimi'
     }
+    else {
+        document.querySelector('.dialogue').innerHTML='Make sure you picked all ingredients, including the dish'
+    }
+    clearTheTable();
 }

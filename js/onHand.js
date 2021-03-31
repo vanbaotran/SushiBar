@@ -1,47 +1,29 @@
-const pickSalmon = document.createElement('img');
-const pickCucumber = document.createElement('img');
-const pickSeaweed = document.createElement('img');
-const pickRice = document.createElement('img');
-const pickSashimiDish = document.createElement('img');
-const pickMakiDish = document.createElement('img');
-const pickKappaDish = document.createElement('img');
-const pickDish = document.createElement('img');
-pickDish.src="images/dish.png"
-pickRice.src="images/chefwRice.png"
-pickSalmon.src="images/chefwSalmon.png"
-pickSeaweed.src="images/chefwSeaweed.png"
-pickCucumber.src="images/chefwCucumber.png"
-pickMakiDish.src="images/chefwMakiDish.png"
-pickKappaDish.src="images/chefwKappaDish.png"
-pickSashimiDish.src="images/chefwSashimiDish.png"
-//pick item when clicked on an ing
+
+// //pick item when clicked on an ing
 document.querySelector('.ing .dish').addEventListener('click',function(){
-     onHand+='dish';
+    if (onHand.length===0 && Math.abs(chef.x-ingPosition(dish).dstx)<1 && Math.abs(chef.y-ingPosition(dish).dsty)<3) {onHand+='dish'};
 })
 document.querySelector('.ing .salmon').addEventListener('click',function(){
-    onHand+='salmon';
+    if (Math.abs(chef.x-ingPosition(salmon).dstx)<1 && Math.abs(chef.y-ingPosition(salmon).dsty)<3 && onHand.length===0) {onHand+='salmon';}
 });
 document.querySelector('.ing .rice').addEventListener('click',function(){
-    onHand+='rice';
+    if (Math.abs(chef.x-ingPosition(rice).dstx)<1 && Math.abs(chef.y-ingPosition(rice).dsty)<3 && onHand.length===0) {onHand+='rice';}
 });
 document.querySelector('.ing .seaweed').addEventListener('click',function(){
-    onHand+='seaweed';
+    if (Math.abs(chef.x-ingPosition(seaweed).dstx)<1 && Math.abs(chef.y-ingPosition(seaweed).dsty)<3 && onHand.length===0) {onHand+='seaweed';}
 });
 document.querySelector('.ing .cucumber').addEventListener('click',function(){
-    onHand+='cucumber';
+    if (Math.abs(chef.x-ingPosition(cucumber).dstx)<1 && Math.abs(chef.y-ingPosition(cucumber).dsty)<3 && onHand.length===0) {onHand+='cucumber';}
 });
-document.querySelector('.ing .trashCan').addEventListener('click',clearTheTable);
 
-
-function updateHandStatus(){
-    if (onHand.length === 0){
-        switch(onHand){
-            case 'dish':
-            drawImage(pickDish,chef.x,chef.y+20,chef.w,chef.h)
-            break;
-            case 'salmon':
-            drawImage(pickSalmon,chef.x,chef.y,chef.w,chef.h);
-            break;
-        }
+document.querySelector('.ing .trashCan').addEventListener('click',function(){
+    if (Math.abs(chef.x-ingPosition(trashCan).dstx)<1 && Math.abs(chef.y-ingPosition(trashCan).dsty)<3  && onHand.length!==0) {onHand='';}
+});
+// middleSection.addEventListener('click',function(){
+    
+function takeTheDish(){
+    if (Math.abs(chef.x-tablePosition().dstx)<1 && Math.abs(chef.y-tablePosition().dsty)<3  && onHand==='' && preparedDish==='maki'){
+        onHand+="maki";
+        console.log('why')
     }
 }
