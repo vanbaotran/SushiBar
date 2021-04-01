@@ -23,13 +23,13 @@ document.querySelector('.ing .trashCan').addEventListener('click',function(){
 
     
 function takeTheDish(){
-    if (Math.abs(chef.x-tablePosition().dstx)<1 && Math.abs(chef.y-tablePosition().dsty)<3  && onHand==='' && preparedDish==='maki'){
+    if (Math.abs(chef.x-tablePosition().dstx)<3 && Math.abs(chef.y-tablePosition().dsty)<3  && onHand==='' && preparedDish==='maki'){
         onHand="maki";
     }
-    if (Math.abs(chef.x-tablePosition().dstx)<1 && Math.abs(chef.y-tablePosition().dsty)<3  && onHand==='' && preparedDish==='kappamaki'){
+    if (Math.abs(chef.x-tablePosition().dstx)<3 && Math.abs(chef.y-tablePosition().dsty)<3  && onHand==='' && preparedDish==='kappamaki'){
         onHand="kappamaki";
     }
-    if (Math.abs(chef.x-tablePosition().dstx)<1 && Math.abs(chef.y-tablePosition().dsty)<3  && onHand==='' && preparedDish==='sashimi'){
+    if (Math.abs(chef.x-tablePosition().dstx)<3 && Math.abs(chef.y-tablePosition().dsty)<3  && onHand==='' && preparedDish==='sashimi'){
         onHand="sashimi";
     }
 }
