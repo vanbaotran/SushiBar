@@ -1,10 +1,11 @@
 let prepFood=[];
 let makiDish=['dish','seaweed','rice','salmon'];
 let kappaDish=['dish','seaweed','rice','cucumber'];
-let sashimiDish=['dish','salmon','rice']
+let sashimiDish=['dish','salmon']
 let preparedDish='';
+
 function addIngredient(){
-    if (onHand.length>0){ //add ingredients to the prepTable
+    if (onHand.length>0 && ingredients.includes(onHand)){ //add ingredients to the prepTable
         prepFood.push(onHand);
         onHand='';
         let ingImage = document.createElement('img');
@@ -25,44 +26,44 @@ function addIngredient(){
             ingImage.src='images/ingCucumber.png';
             break;
         }
-        document.querySelector('.prepTable').appendChild(ingImage);
-        
-    }   
-    
+        middleSection.appendChild(ingImage); 
+    }    
 }
-const kappaDishImg = document.createElement('img');
-kappaDishImg.src='images/kappamaki-dish.png'
 function clearTheTable(){
-    onHand='';
-    prepFood=[];
+    preparedDish=''
+    // prepFood=[];
     let allIng= document.querySelectorAll('.prepTable img')
     allIng.forEach(ing=>ing.remove())
 }
 function rollIt(){
-    preparedDish='';
-    if (makiDish.every(ing=>prepFood.includes(ing))===true){ //img.MakiDish
+    if (makiDish.every(ing=>prepFood.includes(ing))&& onHand==''){ //img.MakiDish
         clearTheTable();
         const makiDishImg = document.createElement('img');
         makiDishImg.src='images/maki-dish.png'
         middleSection.appendChild(makiDishImg);     
-        preparedDish+='maki';
-        onHand+='maki';
+        preparedDish='maki';
+        console.log('preparedDish',preparedDish)
+        console.log('prepFood',prepFood)
     }
-    else if (kappaDish.every(ing=>prepFood.includes(ing))===true){ //img.KAPPA
+    else if (kappaDish.every(ing=>prepFood.includes(ing))&& onHand==''){ //img.MakiDish
         clearTheTable();
+        const kappaDishImg = document.createElement('img');
+        kappaDishImg.src='images/kappamaki-dish.png'
         middleSection.appendChild(kappaDishImg);
-        preparedDish+='kappamaki';
-        onHand+='kappamaki'
-    } else if (sashimiDish.every(ing=>prepFood.includes(ing))===true){ //img.MakiDish
+        preparedDish='kappamaki';
+        console.log('preparedDish',preparedDish)
+        console.log('prepFood',prepFood)
+    } else if (sashimiDish.every(ing=>prepFood.includes(ing)) && onHand==''){ //img.MakiDish
         clearTheTable();
         const sashimiDishImg = document.createElement('img');
         sashimiDishImg.src='images/sashimi-dish.png'
-        document.querySelector('.prepTable').appendChild(sashimiDishImg);
-        preparedDish+='sashimi';
-        onHand+='sashimi'
+        middleSection.appendChild(sashimiDishImg);
+        preparedDish='sashimi';
+        console.log('preparedDish',preparedDish)
+        console.log('prepFood',prepFood)
     }
     else {
         document.querySelector('.dialogue').innerHTML='Make sure you picked all ingredients, including the dish'
     }
-    clearTheTable();
+    
 }

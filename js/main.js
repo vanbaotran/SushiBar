@@ -39,6 +39,8 @@ class Chef{
         this.pickRice=pickRice;
         this.pickSeaweed=pickSeaweed;
         this.pickMakiDish=pickMakiDish;
+        this.pickKappaDish=pickKappaDish;
+        this.pickSashimiDish=pickSashimiDish;
         img.onload = () => {
             this.img = img
             const imgRatio = img.naturalWidth/img.naturalHeight;
@@ -47,12 +49,7 @@ class Chef{
             this.x = W/2-this.w/2;
             this.y = H/2 - this.h/2;
         } 
-        pickDish.onload=()=>{
-            this.pickDish=pickDish;
-        }
-        pickSalmon.onload=()=>{
-            this.pickSalmon=pickSalmon;
-        }
+        
         img.src="images/chefEdited.png"
         
     }
@@ -63,7 +60,7 @@ class Chef{
     update(){
         const deltaX = this.destX - this.x;
         const deltaY = this.destY - this.y;
-        if (Math.abs(deltaX)>1){
+        if (Math.abs(deltaX)>3){
             if (deltaX < 0){
                 this.speedX=-5;
             } else {
@@ -89,6 +86,7 @@ class Chef{
         ctx.drawImage(this.img,this.x,this.y,this.w,this.h); 
     }
     pickItem(item){
+        
         switch(item){
             case 'dish':
             if (!this.pickDish) return
@@ -119,14 +117,14 @@ class Chef{
             ctx.drawImage(this.pickKappaDish,chef.x,chef.y,chef.w,chef.h);
             break;
             case 'sashimi':
-            if (!this.pickSashimiDish) return
+            // if (!this.pickMakiDish) return
+            // ctx.drawImage(this.pickMakiDish,chef.x,chef.y,chef.w,chef.h)
             ctx.drawImage(this.pickSashimiDish,chef.x,chef.y,chef.w,chef.h);
             break;
         }
     }
-    deliver(dish){
-        this.draw();
-        delivered.push(dish);
+    deliver(){
+        checkOrders();
     }
 }
 
@@ -179,7 +177,7 @@ function handleClickLeft(event){
     const dstx = posXDst + dstWidth - 150;
     const dsty = posYDst + dstHeight/2 - chef.h/2;
     chef.moveTo(dstx,dsty);
-    takeTheDish();
+    chef.deliver();
 }
 //move to the ingredients
 function handleClickRight (event){
@@ -252,6 +250,7 @@ function draw(){
     addOrders();
     onHandStatus();  
     addIngToTable(onHand);
+    takeTheDish();
 }
 document.querySelector('button').onclick=function(){
     document.querySelector('button').remove();
