@@ -30,7 +30,8 @@ h1 {
     margin-bottom: 0;
   }
 section{
-    width: 96%;
+    position: relative;
+    width: 1130px;
     height: 68vh;
     display: flex;
     margin-top:0;
@@ -38,6 +39,22 @@ section{
     margin-left:30px;
     margin-bottom:30px;
     background-image: url(http://backgroundlabs.com/wp-content/uploads/2013/04/light-wood-seamless-pattern.jpg);
+}
+.gameFinished{
+    width: 80%;
+    position:absolute;
+    top:10%;
+    left:10%;
+    background-color:peachpuff;
+    opacity: 0.85;
+    color:rgb(97, 66, 8);
+    font-size: 1.3em;
+    text-align: center;
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.5);
+}
+.gameFinished img{
+    margin:30px auto;
+    ;
 }
 .topLine{
     margin:0px;
@@ -49,15 +66,38 @@ section{
     color:white
 }
 .topLine .dialogue{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-image: url(images/dialog-box.png);
+    background-size:100%;   
+    height: 100%;
     margin-left: 20px;
     margin-right: auto;
-    margin-top: 10px;
-    width: 350px;
-    background-image: url(images/dialog-box.png);
-    background-size:100%;
+    margin-top:0;
     padding:25px;
     font-family: 'Nunito', sans-serif;
+}
+.topLine .dialogue .text{
+    width: 350px;
+    font-size:14px;
     color:black;
+    word-wrap: break-word;
+    margin-bottom: 0;
+}
+.dialogue .toClick{
+    position: absolute;
+    top:70%;
+    left:77%;
+    color:beige;
+    font-size:11px;
+    text-align:center;
+    height: 16px;
+    width:70px;
+    border-radius: 3px;
+    background-color:rgb(97, 66, 8);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 }
 .topLine .register{
     background: url("images/register.png") no-repeat;
@@ -75,9 +115,9 @@ section{
     color:orange;
 }
 .topLine .timer{
-    margin-left: 200px;
+    margin-left: auto;
     margin-right: auto;
-    width: 100px;
+    width: 150px;
 }
 .recipes{
     display: flex;
@@ -165,8 +205,8 @@ button{
     height:100wh;
 }
 .prepTable img{
-    width:8vw;
-    height: 10vh;
+    width:25%;
+    height: 25%;
     margin:auto;
 
 }
@@ -178,6 +218,7 @@ footer{
     margin-bottom: 10px;
 }
 .pickUpPoint{
+    position:relative;
     display: flex;
     background-color:#737373;
     height: 20vh;
@@ -186,6 +227,14 @@ footer{
     width:10vw ;
     box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
     border-radius: 10px;
+}
+.pickUpPoint img{
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    top:10px;
+    left:20px;
+
 }
 .line{
     background-color:#737373;
@@ -264,16 +313,14 @@ footer{
 }
 .ing .salmon{
     background-image:url(images/ingSalmon.png);
-    background-size: 100px;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 70px;
     background-position: center;
 }
 .ing .rice{
     background-image:url(images/ingRice.png);
-    background-size: 100px;
+    background-size: 80px;
     background-repeat: no-repeat;
-    background-size: 60%;
     background-position: center;
 }
 .ing .seaweed{

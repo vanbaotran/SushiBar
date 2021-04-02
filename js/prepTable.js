@@ -5,7 +5,8 @@ let sashimiDish=['dish','salmon']
 let preparedDish='';
 
 function addIngredient(){
-    if (onHand.length>0 && ingredients.includes(onHand)){ //add ingredients to the prepTable
+    if (onHand.length>0 && ingredients.includes(onHand)){ 
+        playDroppingSound()//add ingredients to the prepTable
         prepFood.push(onHand);
         onHand='';
         let ingImage = document.createElement('img');
@@ -31,11 +32,12 @@ function addIngredient(){
 }
 function clearTheTable(){
     preparedDish=''
-    // prepFood=[];
+    prepFood=[];
     let allIng= document.querySelectorAll('.prepTable img')
     allIng.forEach(ing=>ing.remove())
 }
 function rollIt(){
+    playRollingSound()
     if (makiDish.every(ing=>prepFood.includes(ing))&& onHand==''){ //img.MakiDish
         clearTheTable();
         const makiDishImg = document.createElement('img');
@@ -63,7 +65,8 @@ function rollIt(){
         console.log('prepFood',prepFood)
     }
     else {
-        document.querySelector('.dialogue').innerHTML='Make sure you picked all ingredients, including the dish'
+        playUhOhsound();
+        instructions.innerHTML='Make sure you picked all ingredients, including the dish. Double click on the Trash Can to clear the table'
     }
     
 }

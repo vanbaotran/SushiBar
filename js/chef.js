@@ -76,7 +76,6 @@ class Chef{
         ctx.drawImage(this.img,this.x,this.y,this.w,this.h); 
     }
     pickItem(item){
-        
         switch(item){
             case 'dish':
             if (!this.pickDish) return
