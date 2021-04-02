@@ -159,7 +159,7 @@ function draw(){
     //function executee toutes les 16 miliseconds
     document.querySelector('section').appendChild(canvas)
     ctx.clearRect(0,0,1750,900);
-    playbackgroundMusic();
+    // playbackgroundMusic();
     chef.draw();
     chef.update();
     displayTime();

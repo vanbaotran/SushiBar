@@ -12,7 +12,7 @@ function ingPosition(item){
     var posXDst= item.getBoundingClientRect().x;
     var posYDst = item.getBoundingClientRect().y; 
     var dstHeight = item.getBoundingClientRect().height;     
-    const dstx = posXDst - chef.w - W*0.35;
+    const dstx = posXDst - 2*chef.w;
     const dsty = posYDst + dstHeight/2 - chef.h/2;
     return {dstx,dsty}
 }
@@ -54,7 +54,7 @@ function handleClickRight (event){
     var posXDst= event.target.getBoundingClientRect().x;
     var posYDst = event.target.getBoundingClientRect().y; 
     var dstHeight = event.target.getBoundingClientRect().height;   
-    const dstx = posXDst - chef.w - W*0.35
+    const dstx = posXDst - 2*chef.w;
     const dsty = posYDst + dstHeight/2 - chef.h/2;
     chef.moveTo(dstx,dsty);
 }   

@@ -164,7 +164,7 @@ li{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    width:10vw;
+    width:160px;
 }
 
 .middleSection{
@@ -281,7 +281,7 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width:10vw;
+    width:160px;
     align-content: space-between;
 }
 .rightLine ul{
@@ -291,9 +291,9 @@ footer{
     margin-left: auto;
 }
 .rightLine li{
-    width: 8vw;
+    width: 150px;
     margin-right: 10px;
-    height: 10vh;
+    height: 80px;
     margin-left:10px;
     opacity: 0.8;
     transition-property: opacity;
