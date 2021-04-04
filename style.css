@@ -229,6 +229,14 @@ footer{
     box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
     border-radius: 10px;
 }
+.pickUpPoint img{
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    top:10px;
+    left:20px;
+
+}
 .line{
     background-color:#737373;
     width:160px ;
