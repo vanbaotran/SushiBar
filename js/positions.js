@@ -27,10 +27,10 @@ function tablePosition(){
     return {dstx,dsty}
 }
 function pickUpPointPosition(){
-    var posXDst= pickUpPoint.getBoundingClientRect().x;
+    var posXDst= 0;
     var posYDst = pickUpPoint.getBoundingClientRect().y; 
     var dstHeight = pickUpPoint.getBoundingClientRect().height;  
-    var dstWidth = pickUpPoint.getBoundingClientRect().width;  
+    var dstWidth = pickUpPoint.getBoundingClientRect().width;
     const dstx = posXDst + dstWidth;
     const dsty = posYDst  - topLineH - titleH + dstHeight/2 - chef.h/2;
     return {dstx,dsty}
