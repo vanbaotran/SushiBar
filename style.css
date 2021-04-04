@@ -32,7 +32,7 @@ h1 {
 section{
     position: relative;
     width: 1130px;
-    height: 900px;
+    height: 600px;
     display: flex;
     margin-top:0;
     margin-right: 30px;
@@ -62,7 +62,7 @@ section{
     justify-content: space-between;
     align-items: center;
     width:96%;
-    height: 10vh;
+    height: 85px;
     color:white
 }
 .topLine .dialogue{
@@ -147,7 +147,7 @@ section{
 
 }
 .timer img{
-    height: 3vh;
+    height: 25px;
     
 }
 ul{
@@ -155,16 +155,6 @@ ul{
 }
 li{
     margin: 30px;
-}
-.leftLine{
-    background-image: url(images/rightLine.png);
-    margin-left:0;
-    margin-top: 0;
-    margin-bottom:0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width:160px;
 }
 
 .middleSection{
@@ -176,7 +166,7 @@ li{
     justify-content: space-between;
 }
 img {
-    height: 20vh;
+    height: 140px;
     margin-bottom:auto;
     padding:0;
     margin: 0;
@@ -217,29 +207,32 @@ footer{
     text-align: center;
     margin-bottom: 10px;
 }
+.leftLine{
+    background-image: url(images/rightLine.png);
+    margin-left:0;
+    margin-top: 0;
+    margin-bottom:0;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width:160px;
+}
 .pickUpPoint{
     position:relative;
     display: flex;
     background-color:#737373;
-    height: 20vh;
+    height: 150px;
     margin-top: 5px;
     margin-bottom: 5px;
-    width:10vw ;
+    width:160px ;
     box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
     border-radius: 10px;
 }
-.pickUpPoint img{
-    width: 100px;
-    height: 100px;
-    position:absolute;
-    top:10px;
-    left:20px;
-
-}
 .line{
     background-color:#737373;
-    width:10vw ;
-    height: 1vh;
+    width:160px ;
+    height: 5px;
     border-radius: 10px;
 }
 .lineOne{
@@ -248,7 +241,7 @@ footer{
 }
 .lineTwo{
     margin-top: 5px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .arrow-left{
   margin:auto;
@@ -268,7 +261,7 @@ footer{
     margin:0px 0px 5px 0px;
 }
 .orders img{
-    height: 15vh;
+    height: 140px;
     padding: 0 auto;
     margin: 0 auto;
 }
@@ -291,7 +284,7 @@ footer{
     margin-left: auto;
 }
 .rightLine li{
-    width: 150px;
+    width: 140px;
     margin-right: 10px;
     height: 80px;
     margin-left:10px;

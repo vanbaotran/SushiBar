@@ -34,8 +34,8 @@ class Chef{
         img.onload = () => {
             this.img = img
             const imgRatio = img.naturalWidth/img.naturalHeight;
-            this.w = 150;
-            this.h = 150/imgRatio;
+            this.w = 120;
+            this.h = 120/imgRatio;
             this.x = W/2-this.w/2;
             this.y = H/2 - this.h/2;
         } 

@@ -18,7 +18,7 @@ let instructions=document.querySelector('.dialogue .text');
 //Display Time:
 let timer = document.querySelector('.timer');
 function displayTime(){ // need to finish at least 8 orders in 5 mins
-    if (frames < 13000){
+    if (frames < 15000){
         if (frames%2000===0){
             time++;
             timer.innerHTML=time+'.00 PM'
@@ -100,7 +100,7 @@ youWinImage.src='images/youwin.png'
 
 function checkWinner(){
     canvas.remove();
-    if (frames>13000 && turnOver.innerHTML<120){
+    if (frames>15000 && turnOver.innerHTML<120){
         console.log('gameover')
         gameFinished.appendChild(gameOverImage);
         gameFinished.appendChild(gameOverText);  
@@ -110,7 +110,7 @@ function checkWinner(){
         playGameOverSound();
         gameFinished.appendChild(resetButton)
     } 
-    if (frames>13000 && turnOver.innerHTML>=120){
+    if (frames>15000 && turnOver.innerHTML>=120){
         console.log('you won');
         youwin=true;
         gameFinished.appendChild(youWinImage);
