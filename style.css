@@ -54,7 +54,6 @@ section{
 }
 .gameFinished img{
     margin:30px auto;
-    ;
 }
 .topLine{
     margin:0px;
@@ -217,6 +216,15 @@ footer{
     flex-direction: column;
     justify-content: flex-end;
     width:160px;
+}
+.leftLine .notice{
+    margin: 0 auto;
+    width: 140px;
+    background-color: beige;
+    color:rgb(19, 19, 1);
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 }
 .pickUpPoint{
     position:relative;
