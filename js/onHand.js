@@ -34,9 +34,9 @@ function takeTheDish(){
         onHand="sashimi";
     }
 }
-
-const turnOver = document.querySelector('.turnOver');
 let score=0;
+const turnOver = document.querySelector('.turnOver');
+
 function deliver(){
     if (Math.abs(chef.x-pickUpPointPosition().dstx)<3 && Math.abs(chef.y-pickUpPointPosition().dsty)<3  && orders.includes(onHand)){
         delivered.push(onHand);

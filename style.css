@@ -110,6 +110,26 @@ section{
     width: 200px;
     text-align: center;
 }
+.on{
+    background-color: white;
+    box-shadow: none;
+    background-size: 100%;
+    width: 20px;
+    padding:10px;
+    margin-left: 5px;
+    margin-right: 0;
+    background-image: url('images/soundOff.png');
+}
+.off{
+    background-color: white;
+    box-shadow: none;
+    background-size: 100%;
+    width: 20px;
+    padding:10px;
+    margin-left: 5px;
+    margin-right: 0;
+    background-image: url('images/soundOn.png')
+}
 .turnOver{
     color:orange;
 }
@@ -219,12 +239,13 @@ footer{
 }
 .leftLine .notice{
     margin: 0 auto;
-    width: 140px;
+    width: 100px;
     background-color: beige;
     color:rgb(19, 19, 1);
     text-align: center;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    font-size:12px;
 }
 .pickUpPoint{
     position:relative;
@@ -241,7 +262,7 @@ footer{
     width: 100px;
     height: 100px;
     position:absolute;
-    top:10px;
+    top:5px;
     left:20px;
 
 }
@@ -274,12 +295,16 @@ footer{
 }
 .orders{
     padding: 0;
-    margin:0px 0px 5px 0px;
+    margin:0;
 }
 .orders img{
-    height: 140px;
-    padding: 0 auto;
-    margin: 0 auto;
+    height: 100px;
+    padding-left:auto;
+    padding-right:auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left:25px;
 }
 .rightLine{
     background-image:url(images/rightLine.png);
