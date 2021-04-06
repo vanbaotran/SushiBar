@@ -141,11 +141,10 @@ function checkWinner(){
 }
 
 function reset(){
+    playbackgroundMusic();
     instructions.innerHTML='Welcome to Neko Sushi! We have the best sushi in town'
     gameFinished.remove();
     clearTheTable();
-    chef.x=W/2 - chef.w/2;
-    chef.y = H/2 - chef.h/2;
     turnOver.innerHTML=0;
     gameover=false;
     youwin=false;
@@ -155,6 +154,8 @@ function reset(){
     delivered=[];
     frames = 0;
     time = 6;
+    chef.x = W/2 - chef.w/2;
+    chef.y = H/2 - chef.h/2;
     animLoop();
     gameFinished.removeChild(checkWinnerContainer);
     checkWinnerContainer=document.createElement('div');
